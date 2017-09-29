@@ -1,0 +1,60 @@
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?122"></script>
+
+<div class="wrapper">
+	<div class="main_buttons">
+		<button id="loadFriends" class="button">загрузить список друзей</button>
+		<button id="reloadFriends" class="button" onclick="window.location.reload()">перезагрузить страницу</button>
+	</div>
+
+	<div class="layout hidden">
+		<div class="layout_container">
+			<div class="layout_container_top">
+				Выберите друзей
+				<div class="layout_container_close" >
+					<img src="img/cross.png" alt="" title="Закрыть окно с друзьями">
+				</div>
+			</div>
+			<div id="friends">
+				<div class="friends_left friends_item">
+					<div class="friends_item_search friends_item_search_left">
+						<input type="text" placeholder="Начните вводить имя друга" class="friends_item_search_left_input" id="friends_item_search_left_input">
+						<div class="img_loupe">
+							<img src="img/loupe.png" alt="">
+						</div>
+					</div>
+
+					<div class="friends_item_left">
+						<p class="friends_item__title">
+							Ваши друзья (<span id="leftFriendsCounter">0</span>)
+						</p>
+						<!-- Левый список друзей -->
+						<div class="friends_item_left_inner friends_inner" id="friends_item_left_inner_block"></div>
+					</div>
+				</div>		
+				<div class="friends_right friends_item">
+					<div class="friends_item_search friends_item_search_right">
+						<input type="text" placeholder="Начните вводить имя друга" class="friends_item_search_right_input" id="friends_item_search_right_input">
+						<div class="img_loupe">
+							<img src="img/loupe.png" alt="">
+						</div>
+					</div>
+					<div class="friends_item_right">
+						<p class="friends_item__title">
+							Ваши друзья (<span id="rightFriendsCounter">0</span>)
+						</p>
+						<!-- Правый список друзей -->
+						<div class="friends_item_right_inner friends_inner" id="friends_item_right_inner_block" ondrop="
+						return drop(event)" ondragover="return allowDrop(event)"></div>
+					</div>
+
+				</div>		
+			</div>
+
+			<div class="layout_container_bottom">
+				<button class="layout_container_bottom_save" id="save">Сохранить</button>
+				<button class="cleanLocalStorage" id="clean">Очистить LocalStorage</button>
+			</div>
+		</div>
+	</div>
+
+</div>

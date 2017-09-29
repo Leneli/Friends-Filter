@@ -1,7 +1,7 @@
 module.exports = function(config) {
     config.set({
         basePath: '',
-        frameworks: ['mocha', 'chai'],
+        frameworks: ['mocha'],
         files: [
             'test/**/*.js'
         ],
@@ -12,23 +12,16 @@ module.exports = function(config) {
         webpackMiddleware: {
             stats: 'errors-only'
         },
-        reporters: ['mocha', 'coverage-istanbul'],
-        coverageIstanbulReporter: {
-            reports: ['html', 'lcovonly', 'text-summary'],
-            fixWebpackSourcePaths: true
-        },
+        reporters: ['mocha'],
         port: 9876,
-        browsers: ['Firefox'], // или Chrome
-        captureTimeout: 20000,
-        singleRun: true,
+        browsers: ['Chrome'],
+        captureTimeout: 60000,
+        singleRun: false,
         plugins: [
             require('karma-mocha'),
-            require('karma-chai'),
             require('karma-webpack'),
             require('karma-mocha-reporter'),
-            require('karma-firefox-launcher'),
             require('karma-chrome-launcher'),
-            require('karma-coverage-istanbul-reporter'),
             require('karma-sourcemap-loader')
         ]
     });
