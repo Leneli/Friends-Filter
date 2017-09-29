@@ -264,8 +264,6 @@ var FriendFilter = (function () {
                 e.preventDefault();
             }
         }
-
-        
     };
 
     return {
